@@ -1,0 +1,24 @@
+[package]
+name = "pong"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0.82"
+rand = "0.8.5"
+
+[dependencies.bevy]
+version = "0.13.2"
+features = ["wav"]
+
+[dependencies.bevy_rapier2d]
+version = "0.25.0"
+features = [
+    "parallel",
+    "simd-stable",
+]
+
+[features]
+default = ["wayland", "dynamic"]
+wayland = ["bevy/wayland"]
+dynamic = ["bevy/dynamic_linking"]
